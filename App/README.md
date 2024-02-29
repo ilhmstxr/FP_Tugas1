@@ -77,7 +77,7 @@ alur:
    - program menampilkan barang pilihan pelanggan
    - apbila tidak ada barang yang dipilih user maka program akan mengoutput tidak ada barang yang 
    - muncul menu keluar keranjang, hapus barang di keranjang, atau edit barang yang dibeli
-   - apabila 
+   - apabila pelanggan menghapus barang atau edit barang, akan muncul menu konfirmasi 1 untuk setuju atau 2 untuk batal
 
    pembayaran
    cara:
@@ -88,13 +88,18 @@ alur:
    - pelanggan memasukkan nilai uang yang dibayarkan
    - program menampilkan kembalian uang pelanggan apabila lebih dari nominal yang dibayarkan
    - apabila uang kurang, program akan menampilkan output uang anda kurang dan looping ke masukkan nilai uang yang dibayarkan
-     keluar
+   - program akan menampilkan struk pembelian barang pelanggan 
 
 4. list transaksi yang telah dibuat
    cara:
    - ketik 3 untuk menu transaksi
    - program menampilkan transaksi yang dibuat oleh pelanggan
    - apabila tidak ada transaksi yang dibuat, program akan menampilkan "tidak ada transaksi"
+
+keluar aplikasi 
+    cara : 
+    - ketik 4 untuk keluar aplikasi 
+    - system akan menampilkan terima kasih telah membeli barang di toko ini....
 
 nota:
 
