@@ -7,16 +7,32 @@ public class cProduk {
     private int[] hargaBarang, stokBarang, idBarang;
     int besar;
 
-
     public cProduk(String[] n, int[] h, int[] s, int[] id) {
         namaBarang = n;
         stokBarang = s;
         hargaBarang = h;
         this.idBarang = id;
         besar = 0;
+
+        // inisialisasi array awal
+        namaBarang = new String[] { "sosis kanzler", "sosis champp", "sosis sonice",
+                "nugget fiesta", "nugget goldstar",
+                "nugget kanzler", "dimsum ayam", "dimsum udang", "dimsum keju", "chikuwa shifudo", "chikuwa cedea",
+                "chikuwa sunfish" };
+
+        hargaBarang = new int[] { 42000, 32000, 29000, 38000, 42000, 45000,
+                25000,
+                27000, 26000, 27000, 24000, 26000 };
+
+        stokBarang = new int[] { 53, 42, 18, 45, 30, 52, 24, 26, 21, 38, 41, 36
+        };
+
+        idBarang = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+
+        System.out.println("Berhasil Di Generate");
     }
 
-    public void setBarang(String newNama, int newHarga, int newStok) {
+    public void ekspansi(String newNama, int newHarga, int newStok) {
         // ekspansi besar array
         namaBarang = Arrays.copyOf(namaBarang, namaBarang.length + 1);
         hargaBarang = Arrays.copyOf(hargaBarang, hargaBarang.length + 1);
@@ -31,24 +47,10 @@ public class cProduk {
         idBarang[idAkhir] = idAkhir;
     }
 
-    public void inisialisasiArray() {
-        // data
-        namaBarang = new String[] { "sosis kanzler", "sosis champp", "sosis sonice",
-                "nugget fiesta", "nugget goldstar",
-                "nugget kanzler", "dimsum ayam", "dimsum udang", "dimsum keju", "chikuwa shifudo", "chikuwa cedea",
-                "chikuwa sunfish" };
+    public void setBarang(String newNama, int newHarga, int newStok) {
 
-        hargaBarang = new int[] { 42000, 32000, 29000, 38000, 42000, 45000,
-                25000,
-                27000, 26000, 27000, 24000, 26000 };
-
-        stokBarang = new int[] { 53, 42, 18, 45, 30, 52, 24, 26, 21, 38, 41, 36
-        };
-
-        idBarang = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-        
     }
-    
+
     // method
 
 }
