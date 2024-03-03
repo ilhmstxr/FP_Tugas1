@@ -12,11 +12,11 @@ public class cProduk {
         System.out.println("Telah Dibuat");
     }
 
-    cProduk(String n, int h, int s) {
+    cProduk(String n, int s, int h) {
         namaProduk = n;
         hargaProduk = h;
         stokProduk = s;
-        System.out.println("Objek" + namaProduk + "Dibuat");
+        System.out.println("Objek " + namaProduk + " Dibuat");
     }
 
     // method
@@ -45,7 +45,7 @@ public class cProduk {
     }
 
     public String ubahMenjadiKalimat() {
-        return namaProduk + "Stok : " + stokProduk + "Rp. " + hargaProduk;
+        return namaProduk + "   Stok :  " + stokProduk + "     Rp.     " + hargaProduk;
     }
 
 }
