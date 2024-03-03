@@ -4,50 +4,48 @@ import java.util.Arrays;
 
 public class cProduk {
     // data
-    private String namaBarang;
-    private int hargaBarang, stokBarang;
+    private String namaProduk;
+    private int hargaProduk, stokProduk;
 
     // constructor
     cProduk() {
         System.out.println("Telah Dibuat");
     }
 
-    cProduk(String n, String j, String k, int h, int s, int u) {
-        namaBarang = n;
-        hargaBarang = h;
-        stokBarang = s;
-        System.out.println("Objek" + namaBarang + "Dibuat");
+    cProduk(String n, int h, int s) {
+        namaProduk = n;
+        hargaProduk = h;
+        stokProduk = s;
+        System.out.println("Objek" + namaProduk + "Dibuat");
     }
 
-    
     // method
 
-    // untuk mengedit suatu harga barang
-    public void setHargaBarang(int h) {
-        hargaBarang = h;
+    // untuk mengedit suatu harga Produk
+    public void setHargaProduk(int h) {
+        hargaProduk = h;
     }
 
-    // untuk mengedit suatu stok barang
-    public void setStokBarang(int s) {
-        stokBarang = s;
+    // untuk mengedit suatu stok Produk
+    public void setStokProduk(int s) {
+        stokProduk = s;
     }
 
     // getter untuk mengambil suatu data
-    public String getNamaBarang() {
-        return namaBarang;
+    public String getNamaProduk() {
+        return namaProduk;
     }
 
-    public int getHargaBarang() {
-        return hargaBarang;
+    public int getHargaProduk() {
+        return hargaProduk;
     }
 
-    public int getStokBarang() {
-        return stokBarang;
+    public int getStokProduk() {
+        return stokProduk;
     }
 
     public String ubahMenjadiKalimat() {
-        return namaBarang + "Stok : " + stokBarang + "Rp. " + hargaBarang;
+        return namaProduk + "Stok : " + stokProduk + "Rp. " + hargaProduk;
     }
-
 
 }
