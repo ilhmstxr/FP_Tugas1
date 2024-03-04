@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 class appKasir {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         cProduk p = new cProduk();
+        Scanner sc = new Scanner(System.in);
         p = new cProduk("Kanzler", 53, 42000);
         int pilihMenu = 0, konfirmasi;
 
