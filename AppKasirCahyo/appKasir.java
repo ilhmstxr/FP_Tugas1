@@ -12,6 +12,10 @@ public class appKasir {
         cPembeli pb = new cPembeli("Ilham", "Surabaya");
         cTransaksi tr = new cTransaksi();
         int pilih = 0;
+        cProduk produk[] = new cProduk[3];
+        produk[0] = new cProduk("sepatu", 150000, 5);
+        produk[1] = new cProduk("sandal", 100000, 10);
+        produk[2] = new cProduk("tas", 123123, 23);
         int jwb;
 
         do {
@@ -120,55 +124,95 @@ public class appKasir {
                     pilih2 = sc.nextInt();
                     switch (pilih2) {
                         case 1:
+                            // nama pembeli
                             System.out.print("Nama = ");
                             String n = sc.next();
-                            System.out.print("Produk = ");
-                            String pr = sc.next();
-                            System.out.print(" Jumlah = ");
-                            int j = sc.nextInt();
-                            if (pr.equalsIgnoreCase(p2.getNama())) {
-                                int t = j * p2.getHarga();
-                                pb = new cPembeli(n);
-                                tr.setPembeli(pb);
-                                tr.setProduk(p2);
-                                tr.setJumlah(j);
-                                tr.setTotal(t);
-                            } else {
-                                System.out.println("Produk tidak ada");
-                            }
+                            pb = new cPembeli(n);
+                            tr.setPembeli(pb);
+                            String pr;
+                            int j, pilih3 = 1;
+                            do {
+                                // int i=0;
+                                // for (i=0; i < produk.length; i++) {
+                                // System.out.println((1 + i) + ". " + produk[i].ToString());
+                                // i++;
+                                // }
+
+                                // pr di looping buat produknya
+                                System.out.println("1. " + produk[0].ToString());
+                                System.out.println("2. " + produk[1].ToString());
+                                System.out.println("3. " + produk[2].ToString());
+                                System.out.println("4. selesai");
+                                System.out.println("pilih = ");
+                                pilih3 = sc.nextInt();
+                                switch (pilih3) {
+                                    case 1:
+                                        System.out.println("Jumlah = ");
+                                        j = sc.nextInt();
+                                        tr.tambahProduk(produk[0], j);
+                                        System.out.println("Tambah Sukses...");
+                                        break;
+                                    case 2:
+                                        tr.tambahProduk(produk[1]);
+                                        System.out.println("Tambah Sukses...");
+                                        break;
+                                    case 3:
+                                        tr.tambahProduk(produk[2]);
+                                        System.out.println("Tambah Sukses...");
+                                        break;
+                                }
+                            } while (pilih3 != 4);
+                            // System.out.print("Produk = ");
+                            // String pr = sc.next();
+                            // System.out.print(" Jumlah = ");
+                            // int j = sc.nextInt();
+                            // if (pr.equalsIgnoreCase(p2.getNama())) {
+                            // int t = j * p2.getHarga();
+                            // tr.setProduk(p2);
+                            // tr.setJumlah(j);
+                            // tr.setTotal(t);
+                            // } else {
+                            // System.out.println("Produk tidak ada");
+                            // }
                             break;
                         case 2:
                             System.out.print(" Nama Produk = ");
                             pr = sc.next();
-                            if (pr.equalsIgnoreCase(tr.getProduk().getNama())) {
-                                System.out.print(" Jumlah Baru  = ");
-                                j = sc.nextInt();
+                            for (int i = 0; i < produk.length; i++) {
+                                if (pr.equalsIgnoreCase(tr.getProduk()[i].getNama())) {
+                                    System.out.print(" Jumlah Baru  = ");
+                                    j = sc.nextInt();
+                                    jwb = konfirmasi();
 
-                                jwb = konfirmasi();
-
-                                if (jwb == 1) {
-                                    tr.setJumlah(j);
-                                    tr.setTotal(j * tr.getProduk().getHarga());
-                                    System.out.println("Ubah sukses");
+                                    if (jwb == 1) {
+                                        tr.setJumlah(j);
+                                        tr.setTotal(j * tr.getProduk()[i].getHarga());
+                                        System.out.println("Ubah sukses");
+                                        break;
+                                    } else {
+                                        System.out.println("Ubah Batal");
+                                    }
+                                    break;
                                 } else {
-                                    System.out.println("Ubah Batal");
+                                    System.out.println("Tidak ada transaksi");
                                 }
-                            } else {
-                                System.out.println("Tidak ada transaksi");
                             }
-
                             break;
                         case 3:
-                            System.out.println(" Nama Transaksi = ");
+                            System.out.println("Nama Produk = ");
                             pr = sc.next();
+                            tr.hapusProduk(pr);
                             break;
                         case 4:
                             if (tr != null) {
                                 System.out.println("Pembeli: " + tr.getPembeli().getNama());
-                                System.out.println("Produk: " + tr.getProduk().getNama());
-                                System.out.println("Jumlah: " + tr.getJumlah());
-                                System.out.println("Harga: " + tr.getProduk().getHarga());
-                                System.out.println("Total: " + tr.getTotal());
+                                tr.lihatKeranjang();
+                                // cTransaksi lihTransaksi();
+                                // System.out.println("Pembeli: " + tr.getPembeli().getNama());
+                                // System.out.println("Produk: " + tr.getProduk().getNama());
+                                // System.out.println("Jumlah: " + tr.getJumlah());
+                                // System.out.println("Harga: " + tr.getProduk().getHarga());
+                                // System.out.println("Total: " + tr.getTotal());
                             } else {
                                 System.out.println("Transaksi kosong");
                             }
@@ -183,12 +227,5 @@ public class appKasir {
         } while (pilih != 4);
     }
 
-    public static int konfirmasi() {
-        System.out.println("Yakin Ubah?");
-        System.out.println("1. Ya");
-        System.out.println("2. Tidak");
-        System.out.print("pilih = ");
-        int jawab = sc.nextInt();
-        return jawab;
-    }
+  
 }

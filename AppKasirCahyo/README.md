@@ -26,3 +26,10 @@ kekurangan:
     - transaksi hanya bisa digunakan 1 user saja
     - menu pembeli belum dikerjakan 
     - menu transaksi kurang menu hapus
+
+    <!-- 18 Maret 2023 -->
+    1 transaksi bisa beli lebih dari 1 barang
+
+    kekurangan: 
+        - belum bisa menambah produk secara dinamis
+        - 
