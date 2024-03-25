@@ -13,22 +13,20 @@ public class cTransaksi {
     // public static void main(String[] args) {
     // System.out.println("Hello World!");
     // }
-    private String[] transkasi;
+    // private String[] transkasi;
 
-    public cTransaksi() {
-        System.out.println("Transaksi berhasil dibuat");
-    }
+    // public cTransaksi() {
+    //     System.out.println("Transaksi berhasil dibuat");
+    // }
 
-    public void ekspansi(){
-        transkasi = Arrays.copyOf(transkasi, transkasi.length + 1);
-    }
+    // public void ekspansi(){
+    //     transkasi = Arrays.copyOf(transkasi, transkasi.length + 1);
+    // }
 
-    public void setTranskasi(String newTranskasi){
-        transkasi.ekspansi();
+    // public void setTranskasi(String newTranskasi){
+    //     // transkasi.ekspansi();
         
-    }
+    // }
     
-
-
-
+        
 }

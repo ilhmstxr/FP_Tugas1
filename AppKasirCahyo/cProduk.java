@@ -1,12 +1,13 @@
-package AppKasir_Cahyo;
+package AppKasirCahyo;  
+
 public class cProduk {
-//    data
+    // data
     private String nama, kode;
     private int harga, stok;
 
-//    method
+    // method
     cProduk() {
-        System.out.println("Constructor dibuat...");
+        System.out.println("Constructor Produk Dibuat...");
     }
 
     cProduk(String n, int h, int s) {
