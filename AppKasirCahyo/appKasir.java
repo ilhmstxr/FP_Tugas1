@@ -58,7 +58,7 @@ public class appKasir {
                             if (ubah == 1) {
                                 System.out.print("  Stok Baru = ");
                                 int u = sc.nextInt();
-                                jwb = konfirmasi();
+                                jwb = tr.konfirmasi();
 
                                 if (jwb == 1) {
                                     p2.setStok(u);
@@ -70,7 +70,7 @@ public class appKasir {
                             else {
                                 System.out.print("  Harga Baru = ");
                                 int u = sc.nextInt();
-                                jwb = konfirmasi();
+                                jwb = tr.konfirmasi();
 
                                 if (jwb == 1) {
                                     p2.setHarga(u);
@@ -84,7 +84,7 @@ public class appKasir {
                         case 3:
                             System.out.print("  nama = ");
                             nama = sc.next();
-                            jwb = konfirmasi();
+                            jwb = tr.konfirmasi();
 
                             if (nama.equalsIgnoreCase(p2.getNama())) {
                                 if (jwb == 1) {
@@ -182,7 +182,7 @@ public class appKasir {
                                 if (pr.equalsIgnoreCase(tr.getProduk()[i].getNama())) {
                                     System.out.print(" Jumlah Baru  = ");
                                     j = sc.nextInt();
-                                    jwb = konfirmasi();
+                                    jwb = tr.konfirmasi();
 
                                     if (jwb == 1) {
                                         tr.setJumlah(j);

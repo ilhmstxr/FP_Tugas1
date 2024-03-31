@@ -123,7 +123,7 @@ public class cTransaksi {
         }
     }
 
-    public static int konfirmasi() {
+    public int konfirmasi() {
         System.out.println("Yakin Ubah?");
         System.out.println("1. Ya");
         System.out.println("2. Tidak");
