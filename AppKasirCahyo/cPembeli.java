@@ -7,15 +7,15 @@ public class cPembeli {
         System.out.println("Constructor Pembeli Dibuat...");
     }
 
-    cPembeli(String n) {
-        nama = n;
-        System.out.println(nama + " Dibuat..");
-    }
-
     cPembeli(String n, String a) {
         nama = n;
         alamat = a;
         System.out.println(nama + alamat + " Dibuat...");
+    }
+
+    cPembeli(String n) {
+        nama = n;
+        System.out.println(nama + " Dibuat..");
     }
 
     public String getNama() {

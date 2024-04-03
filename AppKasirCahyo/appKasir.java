@@ -12,11 +12,21 @@ public class appKasir {
         cPembeli pb = new cPembeli("Ilham", "Surabaya");
         cTransaksi tr = new cTransaksi();
         int pilih = 0;
-        cProduk produk[] = new cProduk[3];
-        produk[0] = new cProduk("sepatu", 150000, 5);
-        produk[1] = new cProduk("sandal", 100000, 10);
-        produk[2] = new cProduk("tas", 123123, 23);
+        cProduk produk[] = new cProduk[10];
+        int idxPrd = 0;
+        produk[idxPrd] = new cProduk("sepatu", 150000, 5);
+        produk[idxPrd++] = new cProduk("sandal", 100000, 10);
+        produk[idxPrd++] = new cProduk("tas", 123123, 23);
         int jwb;
+
+        // for (int i = 0; i < 10; i++) {
+        // if (produk[i] != null) {
+        // System.out.println(produk[i].ToString());
+        // } else {
+        // System.out.println("null");
+        // }
+        // }
+        // System.exit(0);
 
         do {
             System.out.println("\nMENU APP");
@@ -24,6 +34,7 @@ public class appKasir {
             System.out.println("2. Pembeli");
             System.out.println("3. Transaksi");
             System.out.println("4. Exit ");
+            System.out.println("sebelum menambah objek index ke: " + idxPrd);
             System.out.print("PIlih = ");
             pilih = sc.nextInt();
 
@@ -46,8 +57,8 @@ public class appKasir {
                             int harga = sc.nextInt();
                             System.out.print("  stok = ");
                             int stok = sc.nextInt();
-
-                            p2 = new cProduk(nama, harga, stok);
+                            produk[idxPrd++] = new cProduk(nama, harga, stok);
+                            System.out.println("setelah menambah objek: " + idxPrd);
                             break;
                         case 2:
                             System.out.println("  1. Ubah Stok");
@@ -124,7 +135,7 @@ public class appKasir {
                     pilih2 = sc.nextInt();
                     switch (pilih2) {
                         case 1:
-                            // nama pembeli
+                            // nama pembelix
                             System.out.print("Nama = ");
                             String n = sc.next();
                             pb = new cPembeli(n);
@@ -139,9 +150,17 @@ public class appKasir {
                                 // }
 
                                 // pr di looping buat produknya
-                                System.out.println("1. " + produk[0].ToString());
-                                System.out.println("2. " + produk[1].ToString());
-                                System.out.println("3. " + produk[2].ToString());
+                                for (int i = 0; i < produk.length; i++) {
+                                    if (produk[i] != null) {
+                                        System.out.println((i + 1) + produk[i].ToString());
+                                    } else {
+                                        System.out.println("null");
+                                    }
+
+                                }
+                                // System.out.println("1. " + produk[0].ToString());
+                                // System.out.println("2. " + produk[1].ToString());
+                                // System.out.println("3. " + produk[2].ToString());
                                 System.out.println("4. selesai");
                                 System.out.println("pilih = ");
                                 pilih3 = sc.nextInt();
@@ -227,5 +246,4 @@ public class appKasir {
         } while (pilih != 4);
     }
 
-  
 }

@@ -1,6 +1,7 @@
 package App;
 
 import java.util.Scanner;
+import java.time.*;
 
 class appKasir {
     // public static void main(String[] args) {
@@ -148,6 +149,19 @@ class appKasir {
         String pembatasSD = "====================";
         String salahPilih = "Pilihan Tidak ada !\nSilahkan pilih ulang";
         int menu, pilih;
+
+        int count = 1;
+
+        LocalDateTime date = LocalDateTime.now();
+        int tanggal = date.getDayOfMonth();
+        int bulan = date.getMonthValue();
+        int tahun = date.getYear();
+        int jam = date.getHour();
+        int menit = date.getMinute();
+        String strBulan = String.format("%02d", bulan);
+        String strCount = String.format("%03d", count);
+        System.out.println(tanggal + "" + strBulan + "" + strCount);
+        System.exit(0);
 
         // Menu Utama
 
@@ -338,7 +352,7 @@ class appKasir {
                         } while (menu != 4);
                         break;
 
-                        // Pengelolaan member
+                    // Pengelolaan member
                     case 4:
                         do {
                             // menu member
