@@ -14,7 +14,7 @@ public class appKasir {
         int pilih = 0;
         cProduk produk[] = new cProduk[10];
         int idxPrd = 0;
-        produk[idxPrd] = new cProduk("sepatu", 150000, 5);
+        produk[idxPrd++] = new cProduk("sepatu", 150000, 5);
         produk[idxPrd++] = new cProduk("sandal", 100000, 10);
         produk[idxPrd++] = new cProduk("tas", 123123, 23);
         int jwb;
@@ -34,7 +34,7 @@ public class appKasir {
             System.out.println("2. Pembeli");
             System.out.println("3. Transaksi");
             System.out.println("4. Exit ");
-            System.out.println("sebelum menambah objek index ke: " + idxPrd);
+            // System.out.println("sebelum menambah objek index ke: " + idxPrd);
             System.out.print("PIlih = ");
             pilih = sc.nextInt();
 
@@ -58,7 +58,7 @@ public class appKasir {
                             System.out.print("  stok = ");
                             int stok = sc.nextInt();
                             produk[idxPrd++] = new cProduk(nama, harga, stok);
-                            System.out.println("setelah menambah objek: " + idxPrd);
+                            // System.out.println("setelah menambah objek: " + idxPrd);
                             break;
                         case 2:
                             System.out.println("  1. Ubah Stok");

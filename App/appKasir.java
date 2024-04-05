@@ -149,19 +149,30 @@ class appKasir {
         String pembatasSD = "====================";
         String salahPilih = "Pilihan Tidak ada !\nSilahkan pilih ulang";
         int menu, pilih;
+        String nama, cariPrd;
+        int harga, stok;
+        boolean found;
 
+        int idxPrd = 0;
         int count = 1;
 
-        LocalDateTime date = LocalDateTime.now();
-        int tanggal = date.getDayOfMonth();
-        int bulan = date.getMonthValue();
-        int tahun = date.getYear();
-        int jam = date.getHour();
-        int menit = date.getMinute();
-        String strBulan = String.format("%02d", bulan);
-        String strCount = String.format("%03d", count);
-        System.out.println(tanggal + "" + strBulan + "" + strCount);
-        System.exit(0);
+        // produk
+        cProduk dftPrd[] = new cProduk[50];
+        dftPrd[idxPrd++] = new cProduk("kanzler", 42000, 53);
+        dftPrd[idxPrd++] = new cProduk("champ", 32000, 42);
+        dftPrd[idxPrd++] = new cProduk("sonice", 29000, 15);
+        cPembeli listmember[] = new cPembeli[10];
+
+        // LocalDateTime date = LocalDateTime.now();
+        // int tanggal = date.getDayOfMonth();
+        // int bulan = date.getMonthValue();
+        // int tahun = date.getYear();
+        // int jam = date.getHour();
+        // int menit = date.getMinute();
+        // String strBulan = String.format("%02d", bulan);
+        // String strCount = String.format("%03d", count);
+        // System.out.println(tanggal + "" + strBulan + "" + strCount);
+        // System.exit(0);
 
         // Menu Utama
 
@@ -213,15 +224,60 @@ class appKasir {
                                 // tanggal ditambahkan
                                 case 1:
                                     System.out.println("tambah produk");
+                                    sc = new Scanner(System.in);
+                                    System.out.print("    Nama: ");
+                                    nama = sc.nextLine();
+                                    System.out.print("    Harga: ");
+                                    harga = sc.nextInt();
+                                    System.out.print("    Stok: ");
+                                    stok = sc.nextInt();
+                                    dftPrd[idxPrd++] = new cProduk(nama, harga, stok);
+                                    System.out.println("Produk ditambahkan");
+
                                     break;
                                 // Ubah produk. mengubah data produk, data yang dapat dirubah adalah nama,
                                 // harga, stok. serta tanggal dirubah
                                 case 2:
                                     System.out.println("ubah produk");
+                                    System.out.println("    Nama Produk yang ingin diubah: ");
+                                    cariPrd = sc.nextLine();
+                                    found = false;
+                                    for (int i = 0; i < dftPrd.length; i++) {
+                                        if (dftPrd[i] != null) {
+                                            if (cariPrd.equalsIgnoreCase(dftPrd[i].getNamaProduk())) {
+                                                found = true;
+                                                System.out.println("    1. Ubah Stok:");
+                                                System.out.println("    2. Ubah Harga:");
+                                                System.out.print("    Pilih: ");
+                                                pilih = sc.nextInt();
+                                                switch (pilih) {
+                                                    case 1:
+                                                        System.out.print("    Stok: ");
+                                                        stok = sc.nextInt();
+                                                        dftPrd[i].setStokProduk(stok);
+                                                        System.out.println("    Stok berhasil diubah");
+                                                        break;
+                                                    case 2:
+                                                        System.out.print("    Harga: ");
+                                                        harga = sc.nextInt();
+                                                        dftPrd[i].setHargaProduk(harga);
+                                                        System.out.println("    Harga berhasil diubah");
+                                                        break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    // System.out.println(" Pilih:");
                                     break;
                                 // hapus produk. menghapus data produk dengan mengetikkan nama produk yang akan
                                 // dihapus
                                 case 3:
+                                    System.out.println("    Nama Produk yang ingin dihapus: ");
+                                    cariPrd = sc.nextLine();
+                                    found = false;
+                                    for (int i = 0; i < dftPrd.length; i++) {
+
+                                    }
                                     System.out.println("hapus produk");
                                     break;
                                 // detil produk. menampilkan data produk

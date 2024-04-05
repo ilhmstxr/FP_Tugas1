@@ -12,7 +12,7 @@ public class main {
     public static void main(String[] args) {
         // TAMBAHAN E NAK KENE COK
         // cProduk produk[] = new cProduk[10];
-        produk[idxPrd++] = new cProduk("Roti Tawar", 5000, 10);
+        produk[idxPrd] = new cProduk("Roti Tawar", 5000, 10);
         produk[idxPrd++] = new cProduk("Roti manis", 7000, 15);
         produk[idxPrd++] = new cProduk("Roti Keju", 8000, 20);
         // cPembeli pembeli1 = new cPembeli();

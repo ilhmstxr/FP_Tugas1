@@ -23,12 +23,12 @@ public class cPembeli {
     }
 
     // list daftar member
-    public String[][] listMember() {
-        // for (int i = 0; i < ; i++) {
+    // public String[][] listMember() {
+    //     // for (int i = 0; i < ; i++) {
 
-        // }
-        return member;
-    }
+    //     // }
+    //     return member;
+    // }
 
     // registrasi member
 }
